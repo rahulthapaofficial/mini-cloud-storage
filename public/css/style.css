@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    padding: 0 15px;
+}
+
+#navbar {
+    padding: 15px;
+    border-bottom: 1px solid grey;
+}
+
+#navbar ul {
+    float: right
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    border-right: 1px solid grey;
+}
+
+.content {
+    padding: 15px;
+}
+
+#footer {
+    padding: 15px;
+    border-top: 1px solid grey;
+}
