@@ -1,4 +1,7 @@
 <?php
+session_start();
+if (!$_SESSION['loginData']['is_authenticated'])
+    header('Location: auth/login');
 require_once 'config/dbcon.php';
 ?>
 <!DOCTYPE html>
@@ -12,4 +15,3 @@ require_once 'config/dbcon.php';
 </head>
 
 <body>
-    <div id="wrapper">
