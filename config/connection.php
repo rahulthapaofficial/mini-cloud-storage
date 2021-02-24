@@ -2,7 +2,7 @@
 $servername = "localhost";
 $dsn = "mysql:host=$servername;dbname=mini-cloud-storage";
 $username = "root";
-$password = "";
+$password = "admin@myself";
 
 try {
   $db = new PDO($dsn, $username, $password);

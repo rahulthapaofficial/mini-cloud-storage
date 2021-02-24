@@ -2,7 +2,7 @@
 session_start();
 if (!$_SESSION['loginData']['is_authenticated'])
     header('Location: auth/login');
-require_once 'config/dbcon.php';
+require_once 'config/connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

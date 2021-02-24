@@ -1,5 +1,5 @@
 <?php
-require_once '../config/dbcon.php';
+require_once '../config/connection.php';
 
 if (isset($_REQUEST['loginBtn'])) {
     $username = strip_tags($_REQUEST["email_username"]);
@@ -24,8 +24,10 @@ if (isset($_REQUEST['loginBtn'])) {
                         $errorMsg[] = "Invalid Credentials.";
                 } else
                     $errorMsg[] = "Invalid Credentials.";
-            } else
+            } else {
                 $errorMsg[] = "Invalid Credentials.";
+                header('Location: ../auth/login');
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

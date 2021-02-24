@@ -12,18 +12,35 @@ if (isset($_SESSION['loginData']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../public/css/login.css">
 </head>
 
 <body>
     <div>
         <div id="login">
+            <div class="header">
+                <h4>Mini-Cloud Storage</h4>
+            </div>
             <form action="../controllers/login" method="POST">
-                <input type="text" name="email_username" id="email_username" placeholder="Email OR Username">
-                <input type="password" name="password" id="password" placeholder="********">
-                <button type="submit" name="loginBtn">Login</button>
+                <div class="form-group">
+                    <input id="email_username" type="text" name="email_username" class="form-control" placeholder="Email OR Username">
+                </div>
+                <div class="form-group">
+                    <input id="password" type="password" name="password" class="form-control" placeholder="********">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a class="pull-right">Forgot Password?</a>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="loginBtn">Login</button>
+                </div>
             </form>
         </div>
     </div>
+    <script src="../public/js/auth.js"></script>
 </body>
 
 </html>
