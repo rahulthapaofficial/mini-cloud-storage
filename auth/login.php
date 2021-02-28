@@ -22,8 +22,16 @@ if (isset($_SESSION['loginData']))
                 <h4>Mini-Cloud Storage</h4>
             </div>
             <form action="../controllers/login" method="POST">
-                <div class="form-group">
+                <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="email_username" type="text" name="email_username" class="form-control" placeholder="Email OR Username">
+                    <span class="help-block">
+                        <?php
+                        if (isset($_SESSION['errorMsg'])) {
+                            echo $_SESSION['errorMsg'];
+                            unset($_SESSION['errorMsg']);
+                        }
+                        ?>
+                    </span>
                 </div>
                 <div class="form-group">
                     <input id="password" type="password" name="password" class="form-control" placeholder="********">

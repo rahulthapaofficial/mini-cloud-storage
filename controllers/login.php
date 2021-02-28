@@ -1,14 +1,16 @@
 <?php
 require_once '../config/connection.php';
 
+session_start();
+
 if (isset($_REQUEST['loginBtn'])) {
     $username = strip_tags($_REQUEST["email_username"]);
     $email = strip_tags($_REQUEST['email_username']);
     $password = strip_tags($_REQUEST['password']);
     if (empty($username)) {
-        $errorMsg[] = "The username or email field is required.";
+        $_SESSION['errorMsg'] = "The username or email field is required.";
     } else if (empty($email)) {
-        $errorMsg[] = "The username or email field is required.";
+        $_SESSION['errorMsg'] = "The username or email field is required.";
     } else {
         try {
             $sql = $db->prepare("SELECT * FROM users WHERE email=:uemail OR username=:uname");
@@ -19,13 +21,17 @@ if (isset($_REQUEST['loginBtn'])) {
                     if (password_verify($password, $row['password'])) {
                         storeSessionData($row);
                         $loginMessage = "Successfully Logged In !";
-                        header("refresh:2; ../");
-                    } else
-                        $errorMsg[] = "Invalid Credentials.";
-                } else
-                    $errorMsg[] = "Invalid Credentials.";
+                        header("Location: ../");
+                    } else {
+                        $_SESSION['errorMsg'] = "Invalid Credentials.";
+                        header('Location: ../auth/login');
+                    }
+                } else {
+                    $_SESSION['errorMsg'] = "Invalid Credentials.";
+                    header('Location: ../auth/login');
+                }
             } else {
-                $errorMsg[] = "Invalid Credentials.";
+                $_SESSION['errorMsg'] = "Invalid Credentials.";
                 header('Location: ../auth/login');
             }
         } catch (PDOException $e) {
@@ -36,7 +42,6 @@ if (isset($_REQUEST['loginBtn'])) {
 
 function storeSessionData($row)
 {
-    session_start();
     $_SESSION['loginData'] = array('loginData' => array());
     $userInfo = array(
         'id' => $row['id'],
