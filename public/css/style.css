@@ -1,9 +1,15 @@
 body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background: #D2D6DE;
     margin: 0;
 }
 
 a {
     text-decoration: none;
+    color: #5f6368;
 }
 
 #navbar {
@@ -29,20 +35,45 @@ a {
 #sidebar {
     float: left;
     width: 20%;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 #sidebar ul {
     list-style: none;
 }
 
-#sidebar ul li {
+#sidebar ul li:first-child {
+    margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+    display: block;
     padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#sidebar ul li:not(.active) a:hover {
+    color: #fff;
+    display: block;
+    background: rgb(36, 41, 46, 0.3);
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+#sidebar ul li.active {
+    padding: 0 20px;
+    color: #fff;
+    background: rgb(36, 41, 46, 0.6);
+    border-radius: 20px;
+}
+
+#sidebar ul li.active a {
+    color: #fff;
 }
 
 .dropdown #newBtn {
     background: #fff;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
@@ -79,11 +110,55 @@ a {
 }
 
 .content {
+    float: right;
     padding: 15px;
-    width: 80%;
+    width: 77%;
+    margin-bottom: 50px;
+}
+
+.content .content-header {
+    padding: 3px 0 18px 0;
+    font-size: x-large;
+}
+
+.content .container {
+    /* margin-top: 10px; */
+}
+
+.content table {
+    width: 100%;
+}
+
+.content table thead {
+    color: #fff;
+    background: #24292E;
+}
+
+.content table thead tr th {
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.content table tbody tr td {
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 1px solid #fff;
+}
+
+.content table tbody tr td:not(:first-child) {
+    text-align: center;
+}
+
+.pull-right {
+    float: right;
 }
 
 #footer {
-    padding: 15px;
-    background: red;
+    border-top: 1px solid #fff;
+    margin: 0 15px;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #D2D6DE;
 }

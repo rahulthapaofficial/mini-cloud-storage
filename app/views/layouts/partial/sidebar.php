@@ -10,17 +10,17 @@
                 </div>
             </div>
         </li>
-        <li>
-            <a href="#">My Files</a>
+        <li id="myFilesMainNav" class="active">
+            <a href="<?php echo BASEURL . '/mystorage' ?>">My Storage</a>
         </li>
-        <li>
-            <a href="#">Shared with me</a>
+        <li id="sharedWithMeMainNav">
+            <a href="<?php echo BASEURL . '/sharedwithme' ?>">Shared with me</a>
         </li>
         <li>
             <a href="#">Trash</a>
         </li>
         <li>
-            <a href="controllers/logout">Logout</a>
+            <a href="<?php echo BASEURL . '/auth/logout' ?>">Logout</a>
         </li>
     </ul>
 </div>

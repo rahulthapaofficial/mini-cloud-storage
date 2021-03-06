@@ -1,0 +1,153 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background: #D2D6DE;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+#login, #register {
+    flex: 1;
+    width: 30%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    #login, #register {
+        flex: 1;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+#login {
+    margin-top: 10%;
+}
+
+#register {
+    margin-top: 5%;
+}
+
+#login .header h2, #register .header h2 {
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+#login .header h4, #register .header h4 {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 100;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group.errorMsg {
+    background: #CC471B;
+    padding: 8px 5px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: medium;
+    color: #fff;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="confirm_password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 0;
+    outline: 0;
+    border-radius: 320px;
+    background-color: #fff;
+    text-shadow: 1px 1px 0 #fff;
+    box-shadow: inset 2px 2px 5px grey, inset -5px -5px 10px #fff;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="text"]:focus {
+    box-shadow: inset 1px 1px 2px grey, inset -1px -1px 2px #fff;
+}
+
+input[type="email"]:focus {
+    box-shadow: inset 1px 1px 2px grey, inset -1px -1px 2px #fff;
+}
+
+input[type="password"]:focus {
+    box-shadow: inset 1px 1px 2px grey, inset -1px -1px 2px #fff;
+}
+
+input[type="confirm_password"]:focus {
+    box-shadow: inset 1px 1px 2px grey, inset -1px -1px 2px #fff;
+}
+
+.has-error .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+}
+
+.has-error {
+    color: #a94442;
+}
+
+.form-group.has-error .help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+label.checkbox-label {
+    cursor: pointer;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 12px 20px;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 15px;
+    border: 0;
+    outline: 0;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 20px grey;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:active {
+    box-shadow: inset 1px 1px 2px grey, inset -1px -1px 2px #fff;
+}
+
+.btn-flat {
+    width: 100%;
+}
+
+.btn.btn-primary {
+    background: rgb(12, 110, 167);
+}
+
+.btn.btn-success {
+    background: green;
+}
+
+.text-center {
+    text-align: center;
+}

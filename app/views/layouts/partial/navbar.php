@@ -1,6 +1,3 @@
-<?php
-$display_name = $_SESSION['loginData']['userInfo']['display_name'];
-?>
 <div id="navbar">
     <span class="logo">
         Mini-Cloud Storage
@@ -8,6 +5,6 @@ $display_name = $_SESSION['loginData']['userInfo']['display_name'];
     <ul class="menu">
         <li>Notifications</li>
         <li>Add</li>
-        <li><?php echo $display_name; ?></li>
+        <li>User Name</li>
     </ul>
 </div>
