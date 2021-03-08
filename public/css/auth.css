@@ -59,11 +59,11 @@ a {
 }
 
 .form-group.errorMsg {
-    background: #CC471B;
+    background: rgb(204, 71, 27, .3);
     padding: 8px 5px;
     border-radius: 20px;
     text-align: center;
-    font-size: medium;
+    font-size: small;
     color: #fff;
 }
 

@@ -2,9 +2,22 @@
 // Load the Model and the View
 class Controller
 {
-    public function logged_in()
+    public $data;
+    public function __construct()
     {
         $this->helper('session');
+        if (isLoggedIn() == TRUE) {
+            $this->data['user_info'] = array(
+                'uid' => $_SESSION['user_id'],
+                'username' => $_SESSION['username'],
+                'email' => $_SESSION['email'],
+                'display_name' => $_SESSION['display_name'],
+            );
+        }
+    }
+
+    public function logged_in()
+    {
         if (isLoggedIn() == TRUE) {
             $this->redirect('dashboard');
         }

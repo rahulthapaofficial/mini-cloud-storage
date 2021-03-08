@@ -35,7 +35,7 @@ a {
 #sidebar {
     float: left;
     width: 20%;
-    padding: 10px 0;
+    padding: 8px 0;
 }
 
 #sidebar ul {
@@ -43,7 +43,7 @@ a {
 }
 
 #sidebar ul li:first-child {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #sidebar ul li a {
@@ -73,7 +73,7 @@ a {
 
 .dropdown #newBtn {
     background: #fff;
-    padding: 12px 25px;
+    padding: 10px 23px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
@@ -151,6 +151,26 @@ a {
 
 .pull-right {
     float: right;
+}
+
+.mr-2 {
+    margin-right: 2px;
+}
+
+.mr-3 {
+    margin-right: 3px;
+}
+
+.mr-4 {
+    margin-right: 4px;
+}
+
+.text-success {
+    color: #25820e;
+}
+
+.text-danger {
+    color: #CA0B00;
 }
 
 #footer {

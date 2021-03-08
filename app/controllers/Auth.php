@@ -3,6 +3,7 @@ class Auth extends Controller
 {
     public function __construct()
     {
+        parent::__construct();
         $this->logged_in();
         $this->model_user = $this->model('User');
     }
