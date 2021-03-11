@@ -19,7 +19,7 @@ class Controller
     public function logged_in()
     {
         if (isLoggedIn() == TRUE) {
-            $this->redirect('dashboard');
+            $this->redirect('mystorage');
         }
     }
 
@@ -38,15 +38,15 @@ class Controller
     public function model($model)
     {
         // Require Model File
-        require_once '../app/models/' . $model . '.php';
+        require_once 'app/models/' . $model . '.php';
         // Instantiate Model
         return new $model();
     }
 
     public function view($view, $data = [])
     {
-        if (file_exists('../app/views/' . $view . '.php')) {
-            require_once '../app/views/' . $view . '.php';
+        if (file_exists('app/views/' . $view . '.php')) {
+            require_once 'app/views/' . $view . '.php';
         } else {
             die("View does not exists.");
         }
@@ -54,6 +54,6 @@ class Controller
 
     public function helper($helper)
     {
-        return require_once '../app/helpers/' . $helper . '.php';
+        return require_once 'app/helpers/' . $helper . '.php';
     }
 }

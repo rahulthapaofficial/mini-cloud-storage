@@ -36,7 +36,7 @@ class Auth extends Controller
                     $this->createUserSession($loggedInUser);
                 } else {
                     $data['errorMsg'] = 'Invalid Credentials.';
-                    $this->view('pages/auth/login', $data);
+                    $this->view('front/pages/auth/login', $data);
                 }
             }
         } else {
@@ -50,13 +50,13 @@ class Auth extends Controller
             );
         }
         $data['page_title'] = 'Login';
-        $this->view('pages/auth/login', $data);
+        $this->view('front/pages/auth/login', $data);
     }
 
     public function register()
     {
         $data['page_title'] = 'Register';
-        $this->view('pages/auth/register', $data);
+        $this->view('front/pages/auth/register', $data);
     }
 
     public function logout()
@@ -68,7 +68,7 @@ class Auth extends Controller
     {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['username'] = $user->username;
-        $_SESSION['email'] = $user->iemaild;
+        $_SESSION['email'] = $user->email;
         $_SESSION['display_name'] = $user->display_name;
         $this->redirect('mystorage');
     }

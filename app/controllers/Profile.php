@@ -1,5 +1,5 @@
 <?php
-class Sharedwithme extends Controller
+class Profile extends Controller
 {
     public function __construct()
     {
@@ -9,7 +9,7 @@ class Sharedwithme extends Controller
 
     public function index()
     {
-        $data['page_title'] = "Shared With Me";
-        $this->view('front/pages/sharedwithme', $data);
+        $this->data['page_title'] = "Profile";
+        $this->view('pages/profile', $this->data);
     }
 }

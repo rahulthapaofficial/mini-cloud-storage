@@ -10,14 +10,14 @@
                 </div>
             </div>
         </li>
-        <li id="myFilesMainNav" class="active">
+        <li id="myFilesMainNav">
             <a href="<?php echo BASEURL . '/mystorage' ?>"><i class="fas fa-hdd mr-4"></i> My Storage</a>
         </li>
         <li id="sharedWithMeMainNav">
             <a href="<?php echo BASEURL . '/sharedwithme' ?>"><i class="fas fa-users mr-4"></i> Shared with me</a>
         </li>
-        <li>
-            <a href="#"><i class="fas fa-trash-alt mr-4"></i> Trash</a>
+        <li id="trashMainNav">
+            <a href="<?php echo BASEURL . '/trash' ?>"><i class="fas fa-trash-alt mr-4"></i> Trash</a>
         </li>
         <li>
             <a href="<?php echo BASEURL . '/auth/logout' ?>"><i class="fas fa-sign-out-alt mr-4"></i> Logout</a>

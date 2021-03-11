@@ -10,6 +10,6 @@ class Mystorage extends Controller
     public function index()
     {
         $this->data['page_title'] = "My Storage";
-        $this->view('pages/mystorage', $this->data);
+        $this->view('front/pages/mystorage', $this->data);
     }
 }

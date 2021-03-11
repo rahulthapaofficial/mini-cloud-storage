@@ -13,23 +13,40 @@ a {
 }
 
 #navbar {
-    padding: 22px;
+    padding: 20px;
     background: #24292E;
     color: #fff;
 }
 
 #navbar ul {
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 #navbar ul.menu {
     float: right;
 }
 
+#navbar ul.menu li {
+    color: #fff;
+    cursor: pointer;
+}
+
+#navbar ul.menu li:hover {
+    color: silver;
+}
+
 #navbar ul li {
     float: left;
     list-style: none;
     padding: 0 10px;
+}
+
+#navbar ul li img {
+    height: 22px;
+    vertical-align: middle;
+    border-radius: 100%;
 }
 
 #sidebar {
@@ -163,6 +180,22 @@ a {
 
 .mr-4 {
     margin-right: 4px;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-8 {
+    margin-right: 8px;
+}
+
+.mr-9 {
+    margin-right: 9px;
+}
+
+.mr-10 {
+    margin-right: 10px;
 }
 
 .text-success {
