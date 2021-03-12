@@ -1,12 +1,14 @@
+<?php include './app/views/front/modals/folders.php' ?>
 <div id="sidebar">
     <ul>
         <li>
             <div class="dropdown">
                 <button id="newBtn"><i class="fas fa-plus-circle"></i> New</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Folder</a>
-                    <a href="#">File Upload</a>
-                    <a href="#">Folder Upload</a>
+                    <a href="#" id="createFolderBtn"><i class="fas fa-folder-plus mr-4"></i> Folder</a>
+                    <hr>
+                    <a href="#"><i class="fas fa-file-upload mr-4"></i> File Upload</a>
+                    <a href="#"><i class="fas fa-upload mr-4"></i> Folder Upload</a>
                 </div>
             </div>
         </li>

@@ -37,10 +37,14 @@ class Controller
     }
     public function model($model)
     {
-        // Require Model File
-        require_once 'app/models/' . $model . '.php';
-        // Instantiate Model
-        return new $model();
+        $modelDir = 'app/models/' . $model . '.php';
+        if (file_exists($modelDir)) {
+            // Require Model File
+            require_once $modelDir;
+            // Instantiate Model
+            return new $model();
+        } else
+            die($model . " Model does not exists.");
     }
 
     public function view($view, $data = [])
