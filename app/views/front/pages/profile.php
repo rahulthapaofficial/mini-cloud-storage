@@ -1,7 +1,7 @@
 <?php
-require  APPROOT . '/views/layouts/partial/header.php';
-require  APPROOT . '/views/layouts/partial/navbar.php';
-require  APPROOT . '/views/layouts/partial/sidebar.php';
+require  APPROOT . '/views/front/layouts/partial/header.php';
+require  APPROOT . '/views/front/layouts/partial/navbar.php';
+require  APPROOT . '/views/front/layouts/partial/sidebar.php';
 ?>
 
 <div class="content">
@@ -27,4 +27,4 @@ require  APPROOT . '/views/layouts/partial/sidebar.php';
     </div>
 </div>
 <?php
-require  APPROOT . '/views/layouts/partial/footer.php';
+require  APPROOT . '/views/front/layouts/partial/footer.php';

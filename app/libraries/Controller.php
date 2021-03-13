@@ -3,6 +3,7 @@
 class Controller
 {
     public $data;
+    public $request;
     public function __construct()
     {
         $this->helper('session');
@@ -14,6 +15,8 @@ class Controller
                 'display_name' => $_SESSION['display_name'],
             );
         }
+        unset($_REQUEST['url']);
+        $this->request =  $_REQUEST;
     }
 
     public function logged_in()

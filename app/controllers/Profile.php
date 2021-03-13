@@ -10,6 +10,6 @@ class Profile extends Controller
     public function index()
     {
         $this->data['page_title'] = "Profile";
-        $this->view('pages/profile', $this->data);
+        $this->view('front/pages/profile', $this->data);
     }
 }

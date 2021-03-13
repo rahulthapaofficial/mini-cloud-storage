@@ -1,10 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333;
-  background: #d2d6de;
-  margin: 0;
+  background: #e3e6e9;
 }
 
 a {
@@ -12,11 +16,67 @@ a {
   color: #5f6368;
 }
 
+hr {
+  margin: 5px 0;
+}
+
 /* Nav Bar CSS Starts From Here */
 #navbar {
-  padding: 20px;
+  padding: 13px;
   background: #24292e;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navbar span.searchBox {
+  display: flex;
+  background: #24292e;
+  align-items: center;
+  position: relative;
+  width: 40%;
+}
+
+#navbar span.searchBox input[type="text"] {
+  background: #24292e;
+  border-radius: 20px;
+  border: 1px solid silver;
+  padding: 8px 15px 8px 45px;
+}
+
+#navbar span.searchBox input[type="text"]::placeholder {
+  color: silver;
+}
+
+#navbar span.searchBox input[type="text"]:focus {
+  color: #24292e;
+  background: #fff;
+  outline: 0;
+}
+#navbar span.searchBox span.inputIcon,
+#navbar span.searchBox span.inputIconRight {
+  position: absolute;
+  color: silver;
+}
+
+#navbar span.searchBox span.inputIcon {
+  left: 20px;
+}
+
+#navbar span.searchBox span.inputIconRight {
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 50%;
+  right: 20px;
+}
+
+#navbar span.searchBox span.inputIconRight:hover {
+  color: grey;
+}
+
+#navbar span.searchBox input[type="text"]:focus ~ span.inputIcon {
+  color: #24292e;
 }
 
 #navbar ul {
@@ -55,7 +115,15 @@ a {
 #sidebar {
   float: left;
   width: 20%;
-  padding: 8px 0;
+  padding: 23px 0 15px 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  #sidebar {
+    flex: 1;
+    width: 95%;
+    margin: 0 auto;
+  }
 }
 
 #sidebar ul {
@@ -112,6 +180,19 @@ a {
   display: inline-block;
 }
 
+.profile-menu-dropdown-content {
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  overflow: auto;
+  padding: 5px 0;
+  border-radius: 10px;
+  margin-top: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -122,6 +203,18 @@ a {
   border-radius: 10px;
   margin-top: 5px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.profile-menu-dropdown-content a {
+  color: #5f6368;
+  padding: 5px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-menu-dropdown-content a:not(:first-child):hover {
+  color: #fff;
+  background: #5f6368;
 }
 
 .dropdown-content a {
@@ -151,31 +244,54 @@ a {
 .modal .modal-content {
   background: #fefefe;
   margin: 15% auto;
-  padding: 20px 20px 40px 20px;
+  padding: 10px 20px 45px 20px;
   border: 1px solid #888;
-  width: 30%;
+  width: 25%;
   border-radius: 10px;
+}
+
+.modal .modal-content .modal-top-header {
+  margin: -25px 0 0 47.3%;
+}
+.modal .modal-content .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-weight: 700;
 }
 
 .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
+  height: 30px;
+  width: 30px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 0 10px #888888;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #cc472b;
   text-decoration: none;
   cursor: pointer;
 }
 
 .content {
   float: right;
-  padding: 15px;
+  padding: 15px 15px 15px 0;
   width: 77%;
   margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    width: 94%;
+  }
 }
 
 .content .content-header {
@@ -193,7 +309,7 @@ a {
 
 .content table thead {
   color: #fff;
-  background: #24292e;
+  background: rgb(36, 41, 46, 0.6);
 }
 
 .content table thead tr th {
@@ -201,9 +317,17 @@ a {
   padding: 10px 0;
 }
 
+.content table thead tr th:first-child {
+  border-radius: 20px 0 0 20px;
+}
+
+.content table thead tr th:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
 .content table tbody tr td {
   font-weight: 500;
-  padding: 10px 0;
+  padding: 10px 0 10px 10px;
   border-bottom: 1px solid #fff;
 }
 
@@ -248,12 +372,48 @@ a {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 96%;
   padding: 8px 5px;
+  border-radius: 5px;
+  border: .5px solid #24292e;
 }
 
 input[type="text"]:focus {
   outline: 0;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+}
+
+.btn.btn-success {
+  color: #fff;
+  background: green;
+}
+
+.btn.btn-info {
+  color: #fff;
+  background: #069ecc;
+}
+
+.btn.btn-primary {
+  color: #fff;
+  background: #005aae;
+}
+
+.btn.btn-warning {
+  color: #fff;
+  background: orange;
+}
+
+.btn.btn-danger {
+  color: #fff;
+  background: #cc472b;
 }
 
 .text-success {
@@ -265,11 +425,16 @@ input[type="text"]:focus {
 }
 
 #footer {
-  border-top: 1px solid #fff;
-  margin: 0 15px;
-  padding: 15px 0;
+  text-align: center;
   position: fixed;
+  border-top: 1px solid #84878b;
   bottom: 0;
-  width: 100%;
-  background: #d2d6de;
+  width: calc(100% - 30px);
+  background: #e3e6e9;
+  padding: 10px 0;
+  left: 15px;
+}
+
+#footer a:hover {
+  color: #24292e;
 }
