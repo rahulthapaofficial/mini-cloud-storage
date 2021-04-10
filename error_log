@@ -1,0 +1,101 @@
+[10-Apr-2021 20:56:09 Asia/Kathmandu] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:31
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(12): Database->query('SELECT * FROM u...')
+#1 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(34): User->login('rahulthapa043@g...', 'rahulthapa043@g...', 'rg')
+#2 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->login()
+#3 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#4 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#5 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 31
+[10-Apr-2021 21:00:15 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'utloplmy_mcs.users' doesn't exist in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(69): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(15): Database->single()
+#3 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(34): User->login('rahulthapa043@g...', 'rahulthapa043@g...', 'rsar')
+#4 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->login()
+#5 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#6 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#7 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:05:28 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'utloplmy_mcs.users' doesn't exist in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(69): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(15): Database->single()
+#3 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(34): User->login('rahulthapa043@g...', 'rahulthapa043@g...', 'gddrger')
+#4 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->login()
+#5 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#6 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#7 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:11:50 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Sudip in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:50 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:50 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Rahul in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:50 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:54 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Sudip in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:54 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:54 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Rahul in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:54 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:58 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Sudip in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:58 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:58 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Rahul in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:58 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:59 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Sudip in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:59 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:11:59 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Rahul in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:11:59 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:12:01 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Sudip in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:12:01 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:12:01 Asia/Kathmandu] PHP Warning:  filectime(): stat failed for public/storage/users/rahulthapa/Rahul in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 28
+[10-Apr-2021 21:12:01 Asia/Kathmandu] PHP Warning:  number_format() expects parameter 1 to be float, string given in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Mystorage.php on line 39
+[10-Apr-2021 21:22:20 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa043@gmail.com' for key 'email_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(45): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(70): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:22:43 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa-mcs' for key 'username_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(51): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(70): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:25:42 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapamagar043@gmail.com' for key 'email_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(45): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(70): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:26:44 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa-mcs2' for key 'username_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(51): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(70): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[10-Apr-2021 21:26:54 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa-mcs2' for key 'username_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(51): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(70): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(45): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56

@@ -45,11 +45,15 @@ class User
         $result = $this->db->execute();
         if ($result) {
             $username = preg_replace('/\s+/', '', $display_name);
-            $username = strtolower($username) . '-mcs' . $result['id'];
+            $username = strtolower($username) . '2';
             $this->db->query("UPDATE users SET username = :uname");
             $this->db->bind(':uname', $username);
             $result = $this->db->execute();
-            return $result;
+            if($result){
+                $sql = $this->db->query("SELECT * FROM users");
+                $auth = $this->db->single();
+                return $auth;
+            }
         }
     }
 }

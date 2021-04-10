@@ -69,8 +69,10 @@ class Auth extends Controller
 
             $registerUser = $this->model_user->register($data);
 
-            if ($registerUser)
+            if ($registerUser){
+                echo json_encode($registerUser);
                 $this->sendVerificationMail($registerUser);
+            }
             else {
                 $data['errorMsg'] = 'Something went wrong.';
                 $this->view('front/pages/auth/register', $data);
@@ -111,6 +113,7 @@ http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash 
 
         $headers = 'From:minicloudstorage@gmail.com' . "\r\n";
         mail($to, $subject, $message, $headers);
+        echo $user->email;
     }
 
     private function createUserSession($user)
