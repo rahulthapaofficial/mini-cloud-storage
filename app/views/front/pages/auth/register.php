@@ -15,7 +15,7 @@
             <div class="header">
                 <h3>Mini-Cloud Storage</h3>
             </div>
-            <form action="../controllers/register" method="POST">
+            <form action="<?php echo BASEURL . '/auth/register' ?>" method="POST">
                 <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="first_name" type="text" name="first_name" class="form-control" placeholder="First Name" required>
                     <span class="help-block">

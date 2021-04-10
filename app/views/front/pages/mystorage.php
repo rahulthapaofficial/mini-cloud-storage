@@ -1,5 +1,5 @@
 <?php
- 
+
 require  APPROOT . '/views/front/layouts/partial/header.php';
 require  APPROOT . '/views/front/layouts/partial/navbar.php';
 require  APPROOT . '/views/front/layouts/partial/sidebar.php';
@@ -20,15 +20,15 @@ require  APPROOT . '/views/front/layouts/partial/sidebar.php';
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i = 1; $i < 10; $i++) : ?>
+                <?php foreach ($data['folders'] as $key => $folder) : ?>
                     <tr>
-                        <td>BCA Notes <?php echo $i ?></td>
-                        <td>Me</td>
-                        <td>Dec <?php echo $i ?>, 2020</td>
-                        <td>Dec <?php echo $i ?>, 2020</td>
-                        <td><?php echo $i ?> MB</td>
+                        <td><?php echo $folder->name ?></td>
+                        <td><?php echo $folder->owner ?></td>
+                        <td><?php echo $folder->created_time ?></td>
+                        <td><?php echo $folder->modified_time ?></td>
+                        <td><?php echo $folder->size ?></td>
                     </tr>
-                <?php endfor ?>
+                <?php endforeach ?>
             </tbody>
         </table>
     </div>
