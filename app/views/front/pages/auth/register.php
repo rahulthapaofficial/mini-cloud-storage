@@ -18,15 +18,19 @@
             <form action="<?php echo BASEURL . '/auth/register' ?>" method="POST">
                 <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="first_name" type="text" name="first_name" class="form-control" placeholder="First Name" required>
-                    <span class="help-block">
-                        <?php echo $errorMsg ?>
-                    </span>
+                    <?php if (isset($data['errorMsg'])) : ?>
+                        <span class="help-block">
+                            <?php echo $errorMsg ?>
+                        </span>
+                    <?php endif ?>
                 </div>
                 <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="last_name" type="text" name="last_name" class="form-control" placeholder="Last Name" required>
-                    <span class="help-block">
-                        <?php echo $errorMsg ?>
-                    </span>
+                    <?php if (isset($data['errorMsg'])) : ?>
+                        <span class="help-block">
+                            <?php echo $errorMsg ?>
+                        </span>
+                    <?php endif ?>
                 </div>
                 <div class="form-group">
                     <input id="email" type="text" name="email" class="form-control" placeholder="Email" required>

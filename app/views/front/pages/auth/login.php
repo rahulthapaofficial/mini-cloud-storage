@@ -25,9 +25,11 @@
             <form action="<?php echo BASEURL . '/auth/login' ?>" method="POST">
                 <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="email_username" type="text" name="email_username" class="form-control" placeholder="Email OR Username" required>
-                    <span class="help-block">
-                        <?php echo $errorMsg ?>
-                    </span>
+                    <?php if ($data['errorMsg']) : ?>
+                        <span class="help-block">
+                            <?php echo $errorMsg ?>
+                        </span>
+                    <?php endif ?>
                 </div>
                 <div class="form-group">
                     <input id="password" type="password" name="password" class="form-control" placeholder="********" required>
@@ -51,6 +53,21 @@
         </div>
     </div>
     <script src="../public/js/auth.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/608421fd62662a09efc1bbad/1f4229ibe';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 
 </html>

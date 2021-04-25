@@ -71,7 +71,8 @@ class Auth extends Controller
 
             if ($registerUser){
                 echo json_encode($registerUser);
-                $this->sendVerificationMail($registerUser);
+                $this->sendOTP($registerUser);
+                // $this->sendVerificationMail($registerUser);
             }
             else {
                 $data['errorMsg'] = 'Something went wrong.';
@@ -86,6 +87,12 @@ class Auth extends Controller
     public function logout()
     {
         $this->destroyUserSession();
+    }
+
+    private function sendOTP($user)
+    {
+        $email = $user->email;
+        $otp = $user->otp;
     }
 
     private function sendVerificationMail($user)

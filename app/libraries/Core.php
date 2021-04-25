@@ -12,7 +12,8 @@ class Core
 
     public function __construct()
     {
-        // print_r($this->getUrl());
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
 
         $url = $this->getUrl();
 
