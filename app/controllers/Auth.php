@@ -5,11 +5,13 @@ class Auth extends Controller
     {
         parent::__construct();
         $this->logged_in();
+
         $this->model_user = $this->model('User');
     }
 
     public function login()
     {
+        $this->data['page_title'] = 'Login';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -35,8 +37,8 @@ class Auth extends Controller
                 if ($loggedInUser) {
                     $this->createUserSession($loggedInUser);
                 } else {
-                    $data['errorMsg'] = 'Invalid Credentials.';
-                    $this->view('front/pages/auth/login', $data);
+                    $this->data['errorMsg'] = 'Invalid Credentials.';
+                    $this->view('front/pages/auth/login', $this->data);
                 }
             }
         } else {
@@ -49,12 +51,12 @@ class Auth extends Controller
                 'errorMsg' => ''
             );
         }
-        $data['page_title'] = 'Login';
-        $this->view('front/pages/auth/login', $data);
+        $this->view('front/pages/auth/login', $this->data);
     }
 
     public function register()
     {
+        $this->data['page_title'] = 'Register';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -69,18 +71,16 @@ class Auth extends Controller
 
             $registerUser = $this->model_user->register($data);
 
-            if ($registerUser){
+            if ($registerUser) {
                 echo json_encode($registerUser);
                 $this->sendOTP($registerUser);
                 // $this->sendVerificationMail($registerUser);
-            }
-            else {
+            } else {
                 $data['errorMsg'] = 'Something went wrong.';
                 $this->view('front/pages/auth/register', $data);
             }
         } else {
-            $data['page_title'] = 'Register';
-            $this->view('front/pages/auth/register', $data);
+            $this->view('front/pages/auth/register', $this->data);
         }
     }
 
@@ -89,10 +89,24 @@ class Auth extends Controller
         $this->destroyUserSession();
     }
 
-    private function sendOTP($user)
+    private function sendOTP($auth)
     {
-        $email = $user->email;
-        $otp = $user->otp;
+        return;
+        $email = $auth->email;
+        $otp = $auth->otp;
+        $token = bulkSms()->api_token;
+        $mobileNumbers = notificationContacts();
+        $sender = bulkSms()->sender_id;
+        $message = '';
+        foreach ($mobileNumbers as  $number) {
+            $content = [
+                'token' => rawurlencode($token),
+                'to' => rawurlencode($number),
+                'sender' => rawurlencode($sender),
+                'message' => wordwrap($message),
+            ];
+            sendBulkSMS($content);
+        }
     }
 
     private function sendVerificationMail($user)

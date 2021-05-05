@@ -17,7 +17,7 @@
                 <h2>Sign In</h2>
                 <h4>Sign in to start your session</h4>
             </div>
-            <?php if ($data['errorMsg']) : ?>
+            <?php if (isset($this->data['errorMsg'])) : ?>
                 <div class="form-group errorMsg">
                     <label><?php echo $data['errorMsg'] ?></label>
                 </div>
@@ -25,11 +25,6 @@
             <form action="<?php echo BASEURL . '/auth/login' ?>" method="POST">
                 <div class="form-group <?php echo isset($_SESSION['errorMsg']) ? 'has-error' : '' ?>">
                     <input id="email_username" type="text" name="email_username" class="form-control" placeholder="Email OR Username" required>
-                    <?php if ($data['errorMsg']) : ?>
-                        <span class="help-block">
-                            <?php echo $errorMsg ?>
-                        </span>
-                    <?php endif ?>
                 </div>
                 <div class="form-group">
                     <input id="password" type="password" name="password" class="form-control" placeholder="********" required>

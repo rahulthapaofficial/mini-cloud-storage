@@ -13,16 +13,19 @@ class User
         $this->db->bind(':uemail', $email);
         $this->db->bind(':uname', $username);
         $auth = $this->db->single();
-        if ($email == $auth->email or $username == $auth->username) {
-            $hashedPassword = $auth->password;
-            if (password_verify($password, $hashedPassword)) {
-                return $auth;
+        if ($auth) {
+            if ($email == $auth->email or $username == $auth->username) {
+                $hashedPassword = $auth->password;
+                if (password_verify($password, $hashedPassword)) {
+                    return $auth;
+                } else {
+                    return false;
+                }
             } else {
                 return false;
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
     public function register($data)
@@ -33,13 +36,18 @@ class User
         $mobile_no = $data['mobile_no'];
         $display_name = $first_name . ' ' . $last_name;
         $password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $this->db->query("INSERT INTO users (first_name, last_name, email, mobile_no, password, display_name, created_at, updated_at) VALUES (:fname, :lname, :uemail, :mobileno, :password, :displayname, :created, :updated)");
+        $otp = rand(100000, 999999);
+        $hash = hash('ripemd160', $otp);
+
+        $this->db->query("INSERT INTO users (first_name, last_name, email, mobile_no, password, display_name, otp, hash, created_at, updated_at) VALUES (:fname, :lname, :uemail, :mobileno, :password, :displayname, :otp, :hash, :created, :updated)");
         $this->db->bind(':fname', $first_name);
         $this->db->bind(':lname', $last_name);
         $this->db->bind(':uemail', $email);
         $this->db->bind(':mobileno', $mobile_no);
         $this->db->bind(':password', $password);
         $this->db->bind(':displayname', $display_name);
+        $this->db->bind(':otp', $otp);
+        $this->db->bind(':hash', $hash);
         $this->db->bind(':created', time());
         $this->db->bind(':updated', time());
         $result = $this->db->execute();
@@ -49,7 +57,7 @@ class User
             $this->db->query("UPDATE users SET username = :uname");
             $this->db->bind(':uname', $username);
             $result = $this->db->execute();
-            if($result){
+            if ($result) {
                 $sql = $this->db->query("SELECT * FROM users");
                 $auth = $this->db->single();
                 return $auth;
