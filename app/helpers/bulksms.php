@@ -1,4 +1,12 @@
 <?php
+function bulkSmsConfig()
+{
+    $config = new stdClass();
+    $config->sender_id = "HRNCT";
+    $config->api_token = "DTEDuFw7vO1nllw71239uMPqw2LmAKqQYqWB";
+    return $config;
+}
+
 function sendBulkSMS($content)
 {
     $ch = curl_init();

@@ -1,7 +1,7 @@
 <div id="createFolderModal" class="modal">
     <div class="modal-content">
         <div class="modal-top-header">
-            <div class="close">
+            <div class="close" id="createFolderModalCloseBtn">
                 <span>&times;</span>
             </div>
         </div>

@@ -5,7 +5,6 @@ class Auth extends Controller
     {
         parent::__construct();
         $this->logged_in();
-
         $this->model_user = $this->model('User');
     }
 
@@ -35,7 +34,7 @@ class Auth extends Controller
             if (empty($data['emailUsernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->model_user->login($data['email'], $data['username'], $data['password']);
                 if ($loggedInUser) {
-                    $this->createUserSession($loggedInUser);
+                    $this->createAuthSession($loggedInUser);
                 } else {
                     $this->data['errorMsg'] = 'Invalid Credentials.';
                     $this->view('front/pages/auth/login', $this->data);
@@ -72,15 +71,35 @@ class Auth extends Controller
             $registerUser = $this->model_user->register($data);
 
             if ($registerUser) {
-                echo json_encode($registerUser);
-                $this->sendOTP($registerUser);
+                $this->createAuthSession($registerUser);
+                // $this->sendOTP($registerUser);
                 // $this->sendVerificationMail($registerUser);
             } else {
-                $data['errorMsg'] = 'Something went wrong.';
-                $this->view('front/pages/auth/register', $data);
+                $this->data['errorMsg'] = 'Something went wrong.';
+                $this->view('front/pages/auth/register', $this->data);
             }
         } else {
             $this->view('front/pages/auth/register', $this->data);
+        }
+    }
+
+    public function verify()
+    {
+        echo json_encode($_SESSION['user_id']);
+        return;
+        if (!$this->data['user_info'])
+            return $this->redirect('auth/login');
+
+        $this->data['page_title'] = 'Verify';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = array(
+                'otp' => trim($_POST['first_name'])
+            );
+            $this->redirect('mystorage');
+        } else {
+            $this->view('front/pages/auth/verify', $this->data);
         }
     }
 
@@ -91,22 +110,20 @@ class Auth extends Controller
 
     private function sendOTP($auth)
     {
-        return;
-        $email = $auth->email;
+        $firstName = $auth->first_name;
         $otp = $auth->otp;
-        $token = bulkSms()->api_token;
-        $mobileNumbers = notificationContacts();
-        $sender = bulkSms()->sender_id;
-        $message = '';
-        foreach ($mobileNumbers as  $number) {
-            $content = [
-                'token' => rawurlencode($token),
-                'to' => rawurlencode($number),
-                'sender' => rawurlencode($sender),
-                'message' => wordwrap($message),
-            ];
-            sendBulkSMS($content);
-        }
+        $token = bulkSmsConfig()->api_token;
+        $number = $auth->mobile_no;
+        $sender = bulkSmsConfig()->sender_id;
+        $message = 'Dear ' . $firstName . ',
+' . $otp . ' is your OTP for Mini-Cloud Storage.';
+        $content = [
+            'token' => rawurlencode($token),
+            'to' => rawurlencode($number),
+            'sender' => rawurlencode($sender),
+            'message' => wordwrap($message),
+        ];
+        sendBulkSMS($content);
     }
 
     private function sendVerificationMail($user)
@@ -137,12 +154,16 @@ http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash 
         echo $user->email;
     }
 
-    private function createUserSession($user)
+    private function createAuthSession($auth)
     {
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['username'] = $user->username;
-        $_SESSION['email'] = $user->email;
-        $_SESSION['display_name'] = $user->display_name;
+        $_SESSION['user_id'] = $auth->id;
+        $_SESSION['username'] = $auth->username;
+        $_SESSION['email'] = $auth->email;
+        $_SESSION['mobile_no'] = $auth->mobile_no;
+        $_SESSION['display_name'] = $auth->display_name;
+        $_SESSION['is_verified'] = $auth->is_verified;
+        if (!$auth->is_verified)
+            return $this->redirect('auth/verify');
         $this->redirect('mystorage');
     }
 
@@ -151,6 +172,7 @@ http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash 
         unset($_SESSION['user_id']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
+        unset($_SESSION['mobile_no']);
         unset($_SESSION['display_name']);
         $this->redirect('auth/login');
     }

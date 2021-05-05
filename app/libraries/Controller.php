@@ -6,14 +6,20 @@ class Controller
     public $request;
     public function __construct()
     {
+        $this->model_folder = $this->model('Folder');
         $this->helper('session');
+        $this->helper('bulksms');
         if (isLoggedIn() == TRUE) {
             $this->data['user_info'] = array(
                 'uid' => $_SESSION['user_id'],
                 'username' => $_SESSION['username'],
                 'email' => $_SESSION['email'],
+                'mobile_no' => $_SESSION['mobile_no'],
+                'is_verified' => $_SESSION['is_verified'],
                 'display_name' => $_SESSION['display_name'],
             );
+            // Get My All Folders
+            $this->data['my_folders'] = $this->model_folder->getAllFolderIdAndName($this->data['user_info']['uid']);
         }
         unset($_REQUEST['url']);
         $this->request =  $_REQUEST;

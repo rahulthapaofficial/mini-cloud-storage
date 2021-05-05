@@ -27,7 +27,8 @@ class Mystorage extends Controller
             $folder->created_time = date('Y-m-d h:i:s A', $folder->created_at);
             $folder->modified_time = date('Y-m-d h:i:s A', filectime($directory . '/' . $folder->name));
             // Get Directory Size Starts from Here
-            $io = popen('/usr/bin/du -sk ' . $directory . '/' . $folder->name, 'r');
+            $folderName = str_replace(' ', '\ ', $folder->name);
+            $io = popen('/usr/bin/du -sk ' . $directory . '/' . $folderName, 'r');
             $size = fgets($io, 4096);
             $size = substr($size, 0, strpos($size, "\t"));
             pclose($io);

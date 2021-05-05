@@ -58,7 +58,7 @@ class User
             $this->db->bind(':uname', $username);
             $result = $this->db->execute();
             if ($result) {
-                $sql = $this->db->query("SELECT * FROM users");
+                $this->db->query("SELECT * FROM users");
                 $auth = $this->db->single();
                 return $auth;
             }
