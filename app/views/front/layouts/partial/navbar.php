@@ -26,6 +26,7 @@
                     <a href="<?php echo BASEURL . '/profile' ?>"><i class="fas fa-file-alt"></i> Files</a>
                     <hr>
                     <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+                    <a href="#"><i class="fas fa-lock"></i> Lock</a>
                     <a href="<?php echo BASEURL . '/auth/logout' ?>"><i class="fas fa-sign-out-alt mr-4"></i> Sign out</a>
                 </div>
             </div>

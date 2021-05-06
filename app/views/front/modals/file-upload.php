@@ -8,13 +8,13 @@
         <div class="modal-header">
             <label>Upload File</label>
         </div>
-        <form action="<?php echo BASEURL . '/files/store' ?>" method="POST">
+        <form action="<?php echo BASEURL . '/files/store' ?>" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
                 <div class="form-group">
                     <select name="folder_id" id="folder_id" class="form-control">
                         <option value="">Select Folder</option>
                         <?php foreach ($this->data['my_folders'] as $key => $folder) : ?>
-                            <option value=""><?php echo $folder->name; ?></option>
+                            <option value="<?php echo $folder->id ?>"><?php echo $folder->name; ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>

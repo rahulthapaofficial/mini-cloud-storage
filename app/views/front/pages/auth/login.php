@@ -35,9 +35,8 @@
                     </label>
                     <a class="pull-right">Forgot Password?</a>
                 </div>
-                <!-- <hr> -->
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-flat" name="loginBtn">Login</button>
+                    <button type="submit" class="btn btn-primary btn-flat" name="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
                 </div>
                 <div class="text-center">
                     <label>

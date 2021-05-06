@@ -420,6 +420,11 @@ input[type="text"]:focus {
   background: #cc472b;
 }
 
+.btn.btn-system {
+  color: #fff;
+  background: #24292e;
+}
+
 .text-success {
   color: #25820e;
 }
@@ -462,4 +467,12 @@ input[type="text"]:focus {
 
 #footer a:hover {
   color: #24292e;
+}
+
+.mt-1 {
+  margin-top: 1px;
+}
+
+.mt-10 {
+  margin-top: 10px;
 }

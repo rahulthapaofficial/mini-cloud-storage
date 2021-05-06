@@ -19,7 +19,7 @@ class Controller
                 'display_name' => $_SESSION['display_name'],
             );
             // Get My All Folders
-            $this->data['my_folders'] = $this->model_folder->getAllFolderIdAndName($this->data['user_info']['uid']);
+            $this->data['my_folders'] = $this->model_folder->getFolderIdAndName($this->data['user_info']['uid']);
         }
         unset($_REQUEST['url']);
         $this->request =  $_REQUEST;
