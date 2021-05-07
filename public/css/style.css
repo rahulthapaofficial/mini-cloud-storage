@@ -369,7 +369,16 @@ hr {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin: 10px 0;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: small;
+}
+
+.form-group label span.required {
+  color: red;
 }
 
 input[type="file"] {
@@ -451,6 +460,10 @@ input[type="text"]:focus {
 }
 
 .form-control option {
+  padding: 10px;
+}
+
+.modal-footer {
   padding: 10px;
 }
 

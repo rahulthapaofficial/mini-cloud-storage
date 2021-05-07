@@ -1,0 +1,15 @@
+{
+  "name": "rahulthapa/mini-cloud-storage",
+  "description": "Mini-Cloud Storage",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rahul Thapa",
+      "email": "rahulthapa043@gmail.com"
+    }
+  ],
+  "require": {
+    "phpmailer/phpmailer": "^6.4"
+  }
+}

@@ -64,4 +64,13 @@ class User
             }
         }
     }
+
+    public function getMyProfile($userId)
+    {
+        $this->db->query("SELECT * FROM users WHERE id = :uid");
+        $this->db->bind(':uid', $userId);
+        $result = $this->db->single();
+        unset($result->password, $result->otp, $result->hash, $result->created_at, $result->updated_at);
+        return $result;
+    }
 }

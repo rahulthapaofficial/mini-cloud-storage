@@ -1,4 +1,11 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require './vendor/autoload.php';
+
 class Auth extends Controller
 {
     public function __construct()
@@ -71,9 +78,9 @@ class Auth extends Controller
             $registerUser = $this->model_user->register($data);
 
             if ($registerUser) {
-                $this->createAuthSession($registerUser);
+                if ($this->sendVerificationMail($registerUser))
+                    $this->createAuthSession($registerUser);
                 // $this->sendOTP($registerUser);
-                // $this->sendVerificationMail($registerUser);
             } else {
                 $this->data['errorMsg'] = 'Something went wrong.';
                 $this->view('front/pages/auth/register', $this->data);
@@ -128,30 +135,46 @@ class Auth extends Controller
 
     private function sendVerificationMail($user)
     {
+        $name = $user->display_name;
         $email = $user->email;
         $hash = $user->hash;
 
-        $to      = $email; // Send email to our user
-        $subject = 'Signup | Verification'; // Give the email a subject 
-        $message = '
-  
-Thanks for signing up!
-Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-  
-------------------------
-Email: ' . $email . '
-Username: ' . $user->username . '
-OTP: ' . $user->otp . '
-------------------------
-  
+        $to      = $email;
+        $subject = 'Signup | Verification';
+        $body = '
+Thanks for signing up!<br />
+Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br />
+------------------------<br />
+Email: ' . $email . '<br />
+Username: ' . $user->username . '<br />
+------------------------<br />
 Please click this link to activate your account:
-http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash . '
-  
-';
+' . BASEURL . '/auth/verify.php?email=' . $email . '&hash=' . $hash;
 
-        $headers = 'From:minicloudstorage@gmail.com' . "\r\n";
-        mail($to, $subject, $message, $headers);
-        echo $user->email;
+        $mail = new PHPMailer(true);
+        try {
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'mailto.minicloudstorage@gmail.com';
+            $mail->Password   = 'xccsnkwbhtccvalj';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            $mail->setFrom('mailto.minicloudstorage@gmail.com', 'Mini-Cloud Storage');
+            $mail->addAddress($to, $name);
+            $mail->addReplyTo('mcs@rahulthapa.com.np', 'Mini-Cloud Storage');
+
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     private function createAuthSession($auth)
@@ -163,7 +186,7 @@ http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash 
         $_SESSION['display_name'] = $auth->display_name;
         $_SESSION['is_verified'] = $auth->is_verified;
         if (!$auth->is_verified)
-            return $this->redirect('auth/verify');
+            $this->redirect('auth/verify');
         $this->redirect('mystorage');
     }
 
