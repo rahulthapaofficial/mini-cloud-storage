@@ -14,6 +14,9 @@
                 </div>
             </div>
         </li>
+        <li id="dashboardMainNav">
+            <a href="<?php echo BASEURL . '/dashboard' ?>"><i class="fas fa-tachometer-alt mr-4"></i> Dashboard</a>
+        </li>
         <li id="myFilesMainNav">
             <a href="<?php echo BASEURL . '/mystorage' ?>"><i class="fas fa-hdd mr-4"></i> My Storage</a>
         </li>
@@ -25,6 +28,15 @@
         </li>
         <li id="trashMainNav">
             <a href="<?php echo BASEURL . '/trash' ?>"><i class="fas fa-trash-alt mr-4"></i> Trash</a>
+        </li>
+        <hr>
+        <li id="trashMainNav">
+            <a href="<?php echo BASEURL . '/' ?>"><i class="fas fa-cloud mr-4"></i> Storage (<?php echo $this->data['storage_details']['totalUsedSpacePercent'] ?>% full)</a>
+            <div id="myTotalStorage" class="mt-10">
+                <div id="usedStorage" style="width: <?php echo $this->data['storage_details']['totalUsedSpacePercent'] ?>%; background: <?php echo $this->data['storage_details']['totalUsedSpacePercent'] > 90 ? 'red' : ($this->data['storage_details']['totalUsedSpacePercent'] > 50 ? '#f9ab00' : 'green') ?>;"></div>
+            </div>
+            <p style="font-size: small;" class="mt-5"><?php echo $this->data['storage_details']['totalUsedSpace'] ?> of 50 GB Used</p>
+            <button class="btn btn-system btn-outline mt-10">Buy Storage</button>
         </li>
     </ul>
 </div>

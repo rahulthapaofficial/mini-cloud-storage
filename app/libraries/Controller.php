@@ -11,7 +11,7 @@ class Controller
         $this->helper('bulksms');
         if (isLoggedIn() == TRUE) {
             $this->data['user_info'] = array(
-                'uid' => $_SESSION['user_id'],
+                'uid' => $_SESSION['uid'],
                 'username' => $_SESSION['username'],
                 'email' => $_SESSION['email'],
                 'mobile_no' => $_SESSION['mobile_no'],
@@ -20,6 +20,7 @@ class Controller
             );
             // Get My All Folders
             $this->data['my_folders'] = $this->model_folder->getFolderIdAndName($this->data['user_info']['uid']);
+            $this->data['storage_details'] = $this->getStorageDetails($this->data['user_info']['username']);
         }
         unset($_REQUEST['url']);
         $this->request =  $_REQUEST;
@@ -27,17 +28,55 @@ class Controller
 
     public function logged_in()
     {
-        if (isLoggedIn() == TRUE) {
-            $this->redirect('mystorage');
+        $requsetURI = $_SERVER['REQUEST_URI'];
+        $calledMethod = explode("/", $requsetURI)[3];
+        if (!isLoggedIn()) {
+            if ($calledMethod == "verify")
+                $this->redirect('auth/login');
+        } else {
+            if (isVerified())
+                $this->redirect('dashboard');
+            else {
+                if ($calledMethod == "verify")
+                    return;
+                if ($calledMethod == "login")
+                    session_destroy();
+                $this->redirect('auth/verify');
+            }
         }
     }
 
     public function not_logged_in()
     {
-        $this->helper('session');
-        if (isLoggedIn() == FALSE) {
+        if (isLoggedIn()) {
+            if (!isVerified())
+                $this->redirect('auth/verify');
+        } else
             $this->redirect('auth/login');
+    }
+
+    public function getStorageDetails($username)
+    {
+        $storageDetails = array();
+        $directory = 'public/storage/users/' . $username;
+        $totalStorage = 50 * 1024 * 1024;
+        // Get Directory Size Starts from Here
+        $io = popen('/usr/bin/du -sk ' . $directory, 'r');
+        $size = fgets($io, 4096);
+        $size = substr($size, 0, strpos($size, "\t"));
+        pclose($io);
+        if ($size >= (1024 * 1024)) {
+            $storageDetails['totalUsedSpace'] = number_format($size / (1024 * 1024), 0) . ' GB';
+            $storageDetails['totalUsedSpacePercent'] = number_format((($size / $totalStorage) * 100), 2);
+        } else if ($size >= 1024 && $size < (1024 * 1024)) {
+            $storageDetails['totalUsedSpace'] = number_format($size / 1024, 0) . ' MB';
+            $storageDetails['totalUsedSpacePercent'] = number_format((($size / $totalStorage) * 100), 2);
+        } else {
+            $storageDetails['totalUsedSpace'] = number_format($size, 0) . ' KB';
+            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage), 2);
         }
+        return $storageDetails;
+        // Get Directory Size Ends Here
     }
 
     public function redirect($route)

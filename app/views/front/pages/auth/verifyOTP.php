@@ -15,8 +15,7 @@
         <div id="login">
             <div class="header mb-10">
                 <h3>Enter 6 digit OTP</h3>
-                <p>One Time Passcode (OTP) has been sent to <b><?php echo $this->data['user_info']['email'] ?></b></p>
-                <p style="margin-top: 20px">Please enter the OTP below to verify your Email Address. If you cannot see the email from "<b>Mini-Cloud Storage</b>" in your inbox, make sure to check your SPAM folder.</p>
+                <p>One Time Password (OTP) has been sent to your mobile <b><?php echo $this->data['user_info']['mobile_no'] ?></b>, Please enter here to verify your Mobile Number.</p>
             </div>
             <?php if (isset($this->data['errorMsg'])) : ?>
                 <div class="form-group errorMsg">
@@ -28,8 +27,8 @@
                     <input id="otp" type="text" name="otp" class="form-control" placeholder="Enter 6 digit OTP" required>
                 </div>
                 <div class="form-group" style="display: flex; justify-content: space-between;">
-                    <button type="button" class="btn btn-warning btn-flat mr-10" name="loginBtn"><i class="fa fa-reply"></i> Resend OTP</button>
-                    <button type="submit" class="btn btn-success btn-flat ml-10" name="loginBtn"><i class="fa fa-check-circle"></i> Verify OTP</button>
+                    <button type="button" class="btn btn-warning btn-flat mr-10" name="loginBtn"><i class="fa fa-reply"></i> Resend</button>
+                    <button type="submit" class="btn btn-success btn-flat ml-10" name="loginBtn"><i class="fa fa-check-circle"></i> Verify</button>
                 </div>
             </form>
         </div>

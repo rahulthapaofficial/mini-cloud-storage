@@ -52,15 +52,52 @@ class User
         $this->db->bind(':updated', time());
         $result = $this->db->execute();
         if ($result) {
-            $username = preg_replace('/\s+/', '', $display_name);
-            $username = strtolower($username) . '2';
-            $this->db->query("UPDATE users SET username = :uname");
+            $username = strtolower(preg_replace('/\s+/', '', $display_name));
+            $this->db->query("SELECT * FROM users WHERE username = :uname");
             $this->db->bind(':uname', $username);
-            $result = $this->db->execute();
-            if ($result) {
-                $this->db->query("SELECT * FROM users");
+            $user = $this->db->single();
+            if ($user)
+                $username = $username . '-mcs' . $user->id;
+
+            $this->db->query("UPDATE users SET username = :uname WHERE email = :uemail");
+            $this->db->bind(':uname', $username);
+            $this->db->bind(':uemail', $email);
+            if ($this->db->execute()) {
+                $this->db->query("SELECT * FROM users WHERE email = :uemail");
+                $this->db->bind(':uemail', $email);
                 $auth = $this->db->single();
                 return $auth;
+            }
+        }
+    }
+
+    public function verifyOTP($userId, $otp)
+    {
+        $this->db->query("SELECT * FROM users WHERE id = :uid AND otp = :otp");
+        $this->db->bind(':uid', $userId);
+        $this->db->bind(':otp', $otp);
+        $this->db->execute();
+        if (!$this->db->rowCount())
+            return false;
+        $this->db->query("UPDATE users SET is_verified = 1, status = 1 WHERE id = :uid AND otp = :otp");
+        $this->db->bind(':uid', $userId);
+        $this->db->bind(':otp', $otp);
+        $result = $this->db->execute();
+        return $result ? true : false;
+    }
+
+    public function verify($email, $hash)
+    {
+        $this->db->query("SELECT * FROM users WHERE email = :uemail AND hash = :hash");
+        $this->db->bind(':uemail', $email);
+        $this->db->bind(':hash', $hash);
+        if ($this->db->execute()) {
+            $this->db->query("UPDATE users SET is_verified = 1, status = 1");
+            if ($this->db->execute()) {
+                $this->db->query("SELECT * FROM users WHERE email = :uemail AND hash = :hash");
+                $this->db->bind(':uemail', $email);
+                $this->db->bind(':hash', $hash);
+                return $this->db->single();
             }
         }
     }

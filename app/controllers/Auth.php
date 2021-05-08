@@ -90,21 +90,26 @@ class Auth extends Controller
         }
     }
 
-    public function verify()
+    public function verify($email = null, $hash = null)
     {
-        echo json_encode($_SESSION['user_id']);
-        return;
-        if (!$this->data['user_info'])
-            return $this->redirect('auth/login');
+        if ($email && $hash) {
+            $verifyUser = $this->model_user->verify($email, $hash);
+            if ($verifyUser)
+                $this->createAuthSession($verifyUser);
+        }
 
         $this->data['page_title'] = 'Verify';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            $data = array(
-                'otp' => trim($_POST['first_name'])
-            );
-            $this->redirect('mystorage');
+            $otp = trim($_POST['otp']);
+            $verifyOTP = $this->model_user->verifyOTP($this->data['user_info']['uid'], $otp);
+            if ($verifyOTP) {
+                $_SESSION['is_verified'] = 1;
+                $this->redirect('dashboard');
+            }
+            $this->data['errorMsg'] = "Invalid OTP";
+            $this->view('front/pages/auth/verify', $this->data);
         } else {
             $this->view('front/pages/auth/verify', $this->data);
         }
@@ -137,19 +142,54 @@ class Auth extends Controller
     {
         $name = $user->display_name;
         $email = $user->email;
+        $password = $_POST['password'];
+        $otp = $user->otp;
         $hash = $user->hash;
+        $emailVerificationUrl = BASEURL . "/auth/verify/" . $email . "/" . $hash;
+        $emailVerificationPage = BASEURL . "/auth/verify";
 
         $to      = $email;
         $subject = 'Signup | Verification';
-        $body = '
+        $body = "
+<table width='100%' cellspacing='0' cellpadding='0'>
+<tr>
+    <td>
+        <table cellspacing='0' cellpadding='0'>
+            <tr>
+                <td style='border-radius: 2px;' bgcolor='#24292e'>
+                    <p style='width: 100%; padding: 8px 15px; font-size: 18px; color: #fff'>Email Verification | Mini-Cloud Storage Security</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
 Thanks for signing up!<br />
+Your OTP (One Time Passcode) for Mini-Cloud Storage is: " . $otp . "<br />
 Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br />
+<a href='" . $emailVerificationPage . "'>Click Here</a> to continue with your OTP (One Time Passcode).<br />
 ------------------------<br />
-Email: ' . $email . '<br />
-Username: ' . $user->username . '<br />
+Email   : " . $email . "<br />
+Username: " . $user->username . "<br />
+Password: " . $password . "<br />
+OTP     : " . $otp . "<br />
 ------------------------<br />
-Please click this link to activate your account:
-' . BASEURL . '/auth/verify.php?email=' . $email . '&hash=' . $hash;
+Please click the button below to verify your email address:<br />
+<table width='100%' cellspacing='0' cellpadding='0'>
+  <tr>
+      <td>
+          <table cellspacing='0' cellpadding='0'>
+              <tr>
+                  <td style='border-radius: 2px;' bgcolor='#24292e'>
+                      <a href='" . $emailVerificationUrl . "' target='_blank' style='padding: 8px 12px; border-radius: 2px; font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #fff; text-decoration: none;font-weight:bold;display: inline-block;'>
+                          Verify Your Email Address             
+                      </a>
+                  </td>
+              </tr>
+          </table>
+      </td>
+  </tr>
+</table>";
 
         $mail = new PHPMailer(true);
         try {
@@ -179,24 +219,20 @@ Please click this link to activate your account:
 
     private function createAuthSession($auth)
     {
-        $_SESSION['user_id'] = $auth->id;
+        $_SESSION['uid'] = $auth->id;
         $_SESSION['username'] = $auth->username;
         $_SESSION['email'] = $auth->email;
         $_SESSION['mobile_no'] = $auth->mobile_no;
         $_SESSION['display_name'] = $auth->display_name;
         $_SESSION['is_verified'] = $auth->is_verified;
-        if (!$auth->is_verified)
-            $this->redirect('auth/verify');
-        $this->redirect('mystorage');
+        if ($auth->is_verified)
+            $this->redirect('dashboard');
+        $this->redirect('auth/verify');
     }
 
     private function destroyUserSession()
     {
-        unset($_SESSION['user_id']);
-        unset($_SESSION['username']);
-        unset($_SESSION['email']);
-        unset($_SESSION['mobile_no']);
-        unset($_SESSION['display_name']);
+        session_destroy();
         $this->redirect('auth/login');
     }
 }

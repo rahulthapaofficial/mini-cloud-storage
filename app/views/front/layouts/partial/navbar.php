@@ -1,6 +1,6 @@
 <div id="navbar">
     <span class="logo">
-        Mini-Cloud Storage
+        <a href="<?php echo BASEURL ?>">Mini-Cloud Storage</a>
     </span>
     <span class="searchBox">
         <span class="fas fa-search inputIcon"></span>
