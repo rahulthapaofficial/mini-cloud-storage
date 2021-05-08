@@ -183,3 +183,216 @@ Stack trace:
 [07-May-2021 10:08:13 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
 [07-May-2021 14:26:28 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
 [07-May-2021 14:26:28 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[08-May-2021 13:27:31 America/Boise] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/config/config.php on line 9
+[08-May-2021 13:27:31 America/Boise] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/config/config.php on line 9
+[09-May-2021 01:13:13 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:13 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:15 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:15 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:15 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:17 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:17 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:19 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:19 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:19 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:19 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:19 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:20 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:20 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:20 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:20 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:20 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:21 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:21 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:21 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:13:21 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:13:23 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:23 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:13:23 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:03 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:03 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:04 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:04 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:04 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:04 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:04 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:05 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:05 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:05 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:07 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:07 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:08 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:09 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:09 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:09 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:09 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:11 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:11 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:11 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:11 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:12 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:12 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:12 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:12 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:12 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:13 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:13 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:13 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:17 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:14:17 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:14:18 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:18 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:18 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:44 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:44 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:44 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:45 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:45 Asia/Kathmandu] PHP Warning:  require(./vendor/autoload.php): failed to open stream: No such file or directory in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:14:45 Asia/Kathmandu] PHP Fatal error:  require(): Failed opening required './vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php on line 7
+[09-May-2021 01:15:14 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:15:18 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:15:20 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:15:22 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:15:23 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:15:35 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:15:35 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:15:37 Asia/Kathmandu] PHP Notice:  Undefined offset: 3 in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 32
+[09-May-2021 01:16:08 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:16:08 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:16:10 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:16:10 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:16:28 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:16:28 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:21) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 48
+[09-May-2021 01:17:19 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:17:21 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:17:22 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:17:23 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:20:26 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 21
+[09-May-2021 01:20:55 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 22
+[09-May-2021 01:20:55 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:22) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 49
+[09-May-2021 01:20:55 Asia/Kathmandu] PHP Notice:  Array to string conversion in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 19
+[09-May-2021 01:20:55 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:19) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 49
+[09-May-2021 01:20:57 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 22
+[09-May-2021 01:20:57 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:22) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 49
+[09-May-2021 01:20:58 Asia/Kathmandu] PHP Notice:  Array to string conversion in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 19
+[09-May-2021 01:20:58 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:19) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 49
+[09-May-2021 01:21:12 Asia/Kathmandu] PHP Notice:  Array to string conversion in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 19
+[09-May-2021 01:21:12 Asia/Kathmandu] PHP Warning:  session_start(): Cannot start session when headers already sent in /home1/utloplmy/public_html/minicloudstorage/app/helpers/session.php on line 2
+[09-May-2021 01:21:13 Asia/Kathmandu] PHP Notice:  Array to string conversion in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 19
+[09-May-2021 01:21:13 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php:19) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 49
+[08-May-2021 13:36:53 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:36:55 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:36:56 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:36:56 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:36:59 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:37:02 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:37:19 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[08-May-2021 13:37:21 America/Boise] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 54
+[09-May-2021 01:22:32 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 20
+[09-May-2021 01:22:34 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php on line 20
+[09-May-2021 01:26:06 Asia/Kathmandu] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home1/utloplmy/public_html/minicloudstorage/app/controllers/Folders.php:33) in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Controller.php on line 84
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$owner in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 26
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$created_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 27
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$modified_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 28
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$size in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 29
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$owner in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 26
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$created_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 27
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$modified_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 28
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$size in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 29
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$owner in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 26
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$created_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 27
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$modified_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 28
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$size in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 29
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$owner in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 26
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$created_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 27
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$modified_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 28
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$size in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 29
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$owner in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 26
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$created_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 27
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$modified_time in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 28
+[09-May-2021 01:36:12 Asia/Kathmandu] PHP Notice:  Undefined property: stdClass::$size in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/mystorage.php on line 29
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/file-upload.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Warning:  Invalid argument supplied for foreach() in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/file-upload.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/folder-upload.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Warning:  Invalid argument supplied for foreach() in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/folder-upload.php on line 16
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 34
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 34
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 38
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 38
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/dashboard.php on line 18
+[09-May-2021 01:43:11 Asia/Kathmandu] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/dashboard.php on line 18
+[09-May-2021 01:43:18 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/auth/verify.php on line 18
+[09-May-2021 01:43:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/auth/verify.php on line 18
+[09-May-2021 01:43:23 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/auth/verify.php on line 18
+[09-May-2021 01:43:23 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/auth/verify.php on line 18
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: user_info in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/navbar.php on line 21
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/file-upload.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Warning:  Invalid argument supplied for foreach() in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/file-upload.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/folder-upload.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Warning:  Invalid argument supplied for foreach() in /home1/utloplmy/public_html/minicloudstorage/app/views/front/modals/folder-upload.php on line 16
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 34
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 34
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 36
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: storage_details in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 38
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Trying to access array offset on value of type null in /home1/utloplmy/public_html/minicloudstorage/app/views/front/layouts/partial/sidebar.php on line 38
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Notice:  Undefined index: my_folders in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/dashboard.php on line 18
+[09-May-2021 01:48:18 Asia/Kathmandu] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home1/utloplmy/public_html/minicloudstorage/app/views/front/pages/dashboard.php on line 18
+[09-May-2021 01:48:49 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa043@gmail.com' for key 'email_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(53): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(78): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(47): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[09-May-2021 01:49:00 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa043@gmail.com' for key 'email_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(53): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(78): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(47): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56
+[09-May-2021 01:49:13 Asia/Kathmandu] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'rahulthapa043@gmail.com' for key 'email_UNIQUE' in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php:56
+Stack trace:
+#0 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php(56): PDOStatement->execute()
+#1 /home1/utloplmy/public_html/minicloudstorage/app/models/User.php(53): Database->execute()
+#2 /home1/utloplmy/public_html/minicloudstorage/app/controllers/Auth.php(78): User->register(Array)
+#3 /home1/utloplmy/public_html/minicloudstorage/app/libraries/Core.php(47): Auth->register()
+#4 /home1/utloplmy/public_html/minicloudstorage/app/require.php(9): Core->__construct()
+#5 /home1/utloplmy/public_html/minicloudstorage/index.php(2): require_once('/home1/utloplmy...')
+#6 {main}
+  thrown in /home1/utloplmy/public_html/minicloudstorage/app/libraries/Database.php on line 56

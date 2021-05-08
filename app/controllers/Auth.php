@@ -1,4 +1,11 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require './vendor/autoload.php';
+
 class Auth extends Controller
 {
     public function __construct()
@@ -10,6 +17,7 @@ class Auth extends Controller
 
     public function login()
     {
+        $this->data['page_title'] = 'Login';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -33,10 +41,10 @@ class Auth extends Controller
             if (empty($data['emailUsernameError']) && empty($data['passwordError'])) {
                 $loggedInUser = $this->model_user->login($data['email'], $data['username'], $data['password']);
                 if ($loggedInUser) {
-                    $this->createUserSession($loggedInUser);
+                    $this->createAuthSession($loggedInUser);
                 } else {
-                    $data['errorMsg'] = 'Invalid Credentials.';
-                    $this->view('front/pages/auth/login', $data);
+                    $this->data['errorMsg'] = 'Invalid Credentials.';
+                    $this->view('front/pages/auth/login', $this->data);
                 }
             }
         } else {
@@ -49,12 +57,12 @@ class Auth extends Controller
                 'errorMsg' => ''
             );
         }
-        $data['page_title'] = 'Login';
-        $this->view('front/pages/auth/login', $data);
+        $this->view('front/pages/auth/login', $this->data);
     }
 
     public function register()
     {
+        $this->data['page_title'] = 'Register';
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
@@ -69,18 +77,41 @@ class Auth extends Controller
 
             $registerUser = $this->model_user->register($data);
 
-            if ($registerUser){
-                echo json_encode($registerUser);
-                $this->sendOTP($registerUser);
-                // $this->sendVerificationMail($registerUser);
-            }
-            else {
-                $data['errorMsg'] = 'Something went wrong.';
-                $this->view('front/pages/auth/register', $data);
+            if ($registerUser) {
+                if ($this->sendVerificationMail($registerUser))
+                    $this->createAuthSession($registerUser);
+                // $this->sendOTP($registerUser);
+            } else {
+                $this->data['errorMsg'] = 'Something went wrong.';
+                $this->view('front/pages/auth/register', $this->data);
             }
         } else {
-            $data['page_title'] = 'Register';
-            $this->view('front/pages/auth/register', $data);
+            $this->view('front/pages/auth/register', $this->data);
+        }
+    }
+
+    public function verify($email = null, $hash = null)
+    {
+        if ($email && $hash) {
+            $verifyUser = $this->model_user->verify($email, $hash);
+            if ($verifyUser)
+                $this->createAuthSession($verifyUser);
+        }
+
+        $this->data['page_title'] = 'Verify';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $otp = trim($_POST['otp']);
+            $verifyOTP = $this->model_user->verifyOTP($this->data['user_info']['uid'], $otp);
+            if ($verifyOTP) {
+                $_SESSION['is_verified'] = 1;
+                $this->redirect('dashboard');
+            }
+            $this->data['errorMsg'] = "Invalid OTP";
+            $this->view('front/pages/auth/verify', $this->data);
+        } else {
+            $this->view('front/pages/auth/verify', $this->data);
         }
     }
 
@@ -89,55 +120,119 @@ class Auth extends Controller
         $this->destroyUserSession();
     }
 
-    private function sendOTP($user)
+    private function sendOTP($auth)
     {
-        $email = $user->email;
-        $otp = $user->otp;
+        $firstName = $auth->first_name;
+        $otp = $auth->otp;
+        $token = bulkSmsConfig()->api_token;
+        $number = $auth->mobile_no;
+        $sender = bulkSmsConfig()->sender_id;
+        $message = 'Dear ' . $firstName . ',
+' . $otp . ' is your OTP for Mini-Cloud Storage.';
+        $content = [
+            'token' => rawurlencode($token),
+            'to' => rawurlencode($number),
+            'sender' => rawurlencode($sender),
+            'message' => wordwrap($message),
+        ];
+        sendBulkSMS($content);
     }
 
     private function sendVerificationMail($user)
     {
+        $name = $user->display_name;
         $email = $user->email;
+        $password = $_POST['password'];
+        $otp = $user->otp;
         $hash = $user->hash;
+        $emailVerificationUrl = BASEURL . "/auth/verify/" . $email . "/" . $hash;
+        $emailVerificationPage = BASEURL . "/auth/verify";
 
-        $to      = $email; // Send email to our user
-        $subject = 'Signup | Verification'; // Give the email a subject 
-        $message = '
-  
-Thanks for signing up!
-Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-  
-------------------------
-Email: ' . $email . '
-Username: ' . $user->username . '
-OTP: ' . $user->otp . '
-------------------------
-  
-Please click this link to activate your account:
-http://www.mcs.rahulthapa.com.np/verify.php?email=' . $email . '&hash=' . $hash . '
-  
-';
+        $to      = $email;
+        $subject = 'Signup | Verification';
+        $body = "
+<table width='100%' cellspacing='0' cellpadding='0'>
+<tr>
+    <td>
+        <table cellspacing='0' cellpadding='0'>
+            <tr>
+                <td style='border-radius: 2px;' bgcolor='#24292e'>
+                    <p style='width: 100%; padding: 8px 15px; font-size: 18px; color: #fff'>Email Verification | Mini-Cloud Storage Security</p>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+Thanks for signing up!<br />
+Your OTP (One Time Passcode) for Mini-Cloud Storage is: " . $otp . "<br />
+Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.<br />
+<a href='" . $emailVerificationPage . "'>Click Here</a> to continue with your OTP (One Time Passcode).<br />
+------------------------<br />
+Email   : " . $email . "<br />
+Username: " . $user->username . "<br />
+Password: " . $password . "<br />
+OTP     : " . $otp . "<br />
+------------------------<br />
+Please click the button below to verify your email address:<br />
+<table width='100%' cellspacing='0' cellpadding='0'>
+  <tr>
+      <td>
+          <table cellspacing='0' cellpadding='0'>
+              <tr>
+                  <td style='border-radius: 2px;' bgcolor='#24292e'>
+                      <a href='" . $emailVerificationUrl . "' target='_blank' style='padding: 8px 12px; border-radius: 2px; font-family: Helvetica, Arial, sans-serif;font-size: 13px; color: #fff; text-decoration: none;font-weight:bold;display: inline-block;'>
+                          Verify Your Email Address             
+                      </a>
+                  </td>
+              </tr>
+          </table>
+      </td>
+  </tr>
+</table>";
 
-        $headers = 'From:minicloudstorage@gmail.com' . "\r\n";
-        mail($to, $subject, $message, $headers);
-        echo $user->email;
+        $mail = new PHPMailer(true);
+        try {
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'mailto.minicloudstorage@gmail.com';
+            $mail->Password   = 'xccsnkwbhtccvalj';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            $mail->setFrom('mailto.minicloudstorage@gmail.com', 'Mini-Cloud Storage');
+            $mail->addAddress($to, $name);
+            $mail->addReplyTo('mcs@rahulthapa.com.np', 'Mini-Cloud Storage');
+
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
+
+            $mail->send();
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
-    private function createUserSession($user)
+    private function createAuthSession($auth)
     {
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['username'] = $user->username;
-        $_SESSION['email'] = $user->email;
-        $_SESSION['display_name'] = $user->display_name;
-        $this->redirect('mystorage');
+        $_SESSION['uid'] = $auth->id;
+        $_SESSION['username'] = $auth->username;
+        $_SESSION['email'] = $auth->email;
+        $_SESSION['mobile_no'] = $auth->mobile_no;
+        $_SESSION['display_name'] = $auth->display_name;
+        $_SESSION['is_verified'] = $auth->is_verified;
+        if ($auth->is_verified)
+            $this->redirect('dashboard');
+        $this->redirect('auth/verify');
     }
 
     private function destroyUserSession()
     {
-        unset($_SESSION['user_id']);
-        unset($_SESSION['username']);
-        unset($_SESSION['email']);
-        unset($_SESSION['display_name']);
+        session_destroy();
         $this->redirect('auth/login');
     }
 }

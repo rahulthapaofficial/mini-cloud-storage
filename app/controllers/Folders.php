@@ -31,7 +31,7 @@ class Folders extends Controller
                 $create = $this->model_folder->store($folderName, $userInfo['uid']);
                 if ($create) {
                     echo "Folder Created Successfully.";
-                    $this->redirect('mystorage');
+                    $this->redirect('dashboard');
                 } else {
                     echo "Cannot Create Folder.";
                 }

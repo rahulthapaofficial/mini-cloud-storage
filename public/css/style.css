@@ -16,6 +16,12 @@ a {
   color: #5f6368;
 }
 
+.logo a {
+  color: #fff;
+  font-weight: bold;
+  font-size: medium;
+}
+
 hr {
   margin: 5px 0;
 }
@@ -75,7 +81,7 @@ hr {
   color: grey;
 }
 
-#navbar span.searchBox input[type="text"]:focus ~ span.inputIcon {
+#navbarspan.searchBoxinput[type="text"]:focus ~ span.inputIcon {
   color: #24292e;
 }
 
@@ -157,6 +163,22 @@ hr {
 
 #sidebar ul li.active a {
   color: #fff;
+}
+
+#sidebar ul li div {
+  width: 80%;
+}
+
+#sidebar ul li div#myTotalStorage {
+  height: 5px;
+  margin-right: 500px;
+  background: silver;
+  border-radius: 10px;
+}
+
+#sidebar ul li div#usedStorage {
+  height: 5px;
+  border-radius: 10px;
 }
 /* SideBar CSS Ends Here */
 
@@ -329,6 +351,7 @@ hr {
   font-weight: 500;
   padding: 10px 0 10px 10px;
   border-bottom: 1px solid #fff;
+  cursor: pointer;
 }
 
 .content table tbody tr td:not(:first-child) {
@@ -368,14 +391,26 @@ hr {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin: 10px 0;
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: small;
+}
+
+.form-group label span.required {
+  color: red;
+}
+
+input[type="file"] {
+  width: 96%;
+  padding: 5px;
 }
 
 input[type="text"] {
   width: 96%;
-  padding: 8px 5px;
-  border-radius: 5px;
-  border: .5px solid #24292e;
+  padding: 5px;
 }
 
 input[type="text"]:focus {
@@ -389,6 +424,21 @@ input[type="text"]:focus {
   border-radius: 5px;
   border: 0;
   outline: 0;
+}
+
+.btn.btn-system.btn-outline {
+  padding: 10px 30px;
+  border: 1px solid rgba(36, 41, 46, 0.5);
+  background: none;
+  color: #24292e;
+  font-weight: bold;
+}
+
+.btn.btn-system.btn-outline:hover {
+  border: 1px solid rgba(36, 41, 46, 0.5);
+  background: rgba(36, 41, 46, 0.05);
+  color: #24292e;
+  font-weight: bold;
 }
 
 .btn.btn-success {
@@ -416,12 +466,42 @@ input[type="text"]:focus {
   background: #cc472b;
 }
 
+.btn.btn-system {
+  color: #fff;
+  background: #24292e;
+}
+
 .text-success {
   color: #25820e;
 }
 
 .text-danger {
   color: #ca0b00;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  color: #24292e;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  outline: 0;
+}
+
+.form-control option {
+  padding: 10px;
+}
+
+.modal-footer {
+  padding: 10px;
 }
 
 #footer {
@@ -437,4 +517,16 @@ input[type="text"]:focus {
 
 #footer a:hover {
   color: #24292e;
+}
+
+.mt-1 {
+  margin-top: 1px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
 }

@@ -42,7 +42,7 @@
                     <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                    <input id="confirm_password" type="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
+                    <input id="confirm_password" type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
                 </div>
                 <div class="form-group">
                     <label class="checkbox-label">
