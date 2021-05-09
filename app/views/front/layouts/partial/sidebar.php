@@ -35,7 +35,7 @@
             <div id="myTotalStorage" class="mt-10">
                 <div id="usedStorage" style="width: <?php echo $this->data['storage_details']['totalUsedSpacePercent'] ?>%; background: <?php echo $this->data['storage_details']['totalUsedSpacePercent'] > 90 ? 'red' : ($this->data['storage_details']['totalUsedSpacePercent'] > 50 ? '#f9ab00' : 'green') ?>;"></div>
             </div>
-            <p style="font-size: small;" class="mt-5"><?php echo $this->data['storage_details']['totalUsedSpace'] ?> of 50 GB Used</p>
+            <p style="font-size: small;" class="mt-5"><?php echo $this->data['storage_details']['totalUsedSpace'] ?> of <?php echo $this->data['storage_details']['totalStorage'] ?> Used</p>
             <button class="btn btn-system btn-outline mt-10">Buy Storage</button>
         </li>
     </ul>

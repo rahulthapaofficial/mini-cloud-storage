@@ -59,7 +59,13 @@ class Controller
     {
         $storageDetails = array();
         $directory = 'public/storage/users/' . $username;
-        $totalStorage = 50 * 1024 * 1024;
+        $totalStorage = 20 * 1024 * 1024;
+        if($totalStorage >= (1024 * 1024))
+            $storageDetails['totalStorage'] = $totalStorage / (1024 * 1024) . ' GB';
+        else if($totalStorage >= 1024 && $totalStorage < (1024 * 1024))
+            $storageDetails['totalStorage'] = $totalStorage / 1024 . ' MB';
+        else
+            $storageDetails['totalStorage'] = $totalStorage . ' KB';
         // Get Directory Size Starts from Here
         $io = popen('/usr/bin/du -sk ' . $directory, 'r');
         $size = fgets($io, 4096);
@@ -73,7 +79,7 @@ class Controller
             $storageDetails['totalUsedSpacePercent'] = number_format((($size / $totalStorage) * 100), 2);
         } else {
             $storageDetails['totalUsedSpace'] = number_format($size, 0) . ' KB';
-            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage), 2);
+            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage) * 100, 2);
         }
         return $storageDetails;
         // Get Directory Size Ends Here
