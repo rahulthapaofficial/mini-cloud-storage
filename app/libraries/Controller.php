@@ -59,7 +59,13 @@ class Controller
     {
         $storageDetails = array();
         $directory = 'public/storage/users/' . $username;
-        $totalStorage = 50 * 1024 * 1024;
+        $totalStorage = 0.5 * 1024 * 1024;
+        if ($totalStorage >= (1024 * 1024))
+            $storageDetails['totalStorage'] = number_format($totalStorage / (1024 * 1024), 0) . ' GB';
+        else if ($totalStorage >= 1024 && $totalStorage < (1024 * 1024))
+            $storageDetails['totalStorage'] = number_format($totalStorage / 1024, 0) . ' MB';
+        else
+            $storageDetails['totalStorage'] = number_format($totalStorage, 0) . ' KB';
         // Get Directory Size Starts from Here
         $io = popen('/usr/bin/du -sk ' . $directory, 'r');
         $size = fgets($io, 4096);
@@ -73,7 +79,7 @@ class Controller
             $storageDetails['totalUsedSpacePercent'] = number_format((($size / $totalStorage) * 100), 2);
         } else {
             $storageDetails['totalUsedSpace'] = number_format($size, 0) . ' KB';
-            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage), 2);
+            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage) * 100, 2);
         }
         return $storageDetails;
         // Get Directory Size Ends Here
@@ -81,8 +87,9 @@ class Controller
 
     public function redirect($route)
     {
-        header('Location: ' . BASEURL . '/' . $route);
+        echo "<script>window.location='" . BASEURL . '/' . $route . "'</script>";
     }
+
     public function model($model)
     {
         $modelDir = 'app/models/' . $model . '.php';

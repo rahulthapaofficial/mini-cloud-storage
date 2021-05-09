@@ -122,6 +122,7 @@ hr {
   float: left;
   width: 20%;
   padding: 23px 0 15px 15px;
+  margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -163,6 +164,9 @@ hr {
 
 #sidebar ul li.active a {
   color: #fff;
+}
+#sidebar ul li a i {
+  width: 20px;
 }
 
 #sidebar ul li div {
@@ -426,12 +430,18 @@ input[type="text"]:focus {
   outline: 0;
 }
 
+.btn-xs {
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
 .btn.btn-system.btn-outline {
-  padding: 10px 30px;
+  padding: 10px;
   border: 1px solid rgba(36, 41, 46, 0.5);
   background: none;
   color: #24292e;
   font-weight: bold;
+  font-size: 13px;
 }
 
 .btn.btn-system.btn-outline:hover {

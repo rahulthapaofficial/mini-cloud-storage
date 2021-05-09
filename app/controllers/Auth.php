@@ -78,6 +78,12 @@ class Auth extends Controller
             $registerUser = $this->model_user->register($data);
 
             if ($registerUser) {
+                $directory = 'public/storage/users' . '/' . $registerUser->username;
+                if (!file_exists($directory)) {
+                    $old = umask(0);
+                    mkdir($directory, 0777);
+                    umask($old);
+                }
                 if ($this->sendVerificationMail($registerUser))
                     $this->createAuthSession($registerUser);
                 // $this->sendOTP($registerUser);
