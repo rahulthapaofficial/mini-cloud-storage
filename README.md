@@ -1,5 +1,16 @@
-# mini-cloud-storage
-College Project on Mini-Cloud Storage
+# Mini-Cloud Storage
+College Project on Mini-Cloud Storage to store data in cloud. Written in PHP.
 
-## Email/UserName : rahulthapaofficial@gmail.com/rahulthapa
-### Password : 12345678
+## Default Credentials
+Email
+```html
+user@myself.com
+```
+Username
+```html
+user
+```
+Password
+```html
+12345678
+```
