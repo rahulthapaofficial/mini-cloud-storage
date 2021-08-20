@@ -3,7 +3,7 @@ College Project on Mini-Cloud Storage to store data in cloud. Written in PHP.
 
 ## Installation
 ```html
-https://github.com/rahulthapaofficial/mini-cloud-storage.git
+git clone https://github.com/rahulthapaofficial/mini-cloud-storage.git
 ```
 
 ## Default Credentials
