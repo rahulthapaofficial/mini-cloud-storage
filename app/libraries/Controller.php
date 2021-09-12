@@ -78,8 +78,8 @@ class Controller
             $storageDetails['totalUsedSpace'] = number_format($size / 1024, 0) . ' MB';
             $storageDetails['totalUsedSpacePercent'] = number_format((($size / $totalStorage) * 100), 2);
         } else {
-            $storageDetails['totalUsedSpace'] = number_format($size, 0) . ' KB';
-            $storageDetails['totalUsedSpacePercent'] = number_format(($size / $totalStorage) * 100, 2);
+            $storageDetails['totalUsedSpace'] = number_format($size || 0, 0) . ' KB';
+            $storageDetails['totalUsedSpacePercent'] = number_format(($size || 0 / $totalStorage) * 100, 2);
         }
         return $storageDetails;
         // Get Directory Size Ends Here

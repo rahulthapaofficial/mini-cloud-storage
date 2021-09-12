@@ -63,7 +63,7 @@ class Folders extends Controller
             else if ($size > 1024 && $size < (1024 * 1024))
                 $fileSize = number_format(($size / 1024), 2) . ' MB';
             else
-                $fileSize = number_format($size, 2) . ' KB';
+                $fileSize = number_format($size || 0, 2) . ' KB';
             $folder->size = $fileSize;
             // Get Directory Size Ends Here
         }

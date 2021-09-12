@@ -9,7 +9,7 @@
             <label>Edit Profile</label>
         </div>
         <hr>
-        <form action="<?php echo BASEURL . '/profile/edit' ?>" method="POST">
+        <form action="<?php echo BASEURL . '/profile/update' ?>" method="POST">
             <div class="modal-body">
                 <div class="form-group">
                     <label for="firstName">First Name <span class="required">*</span></label>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="firstName">Last Name <span class="required">*</span></label>
-                    <input type="text" name="first_name" class="form-control" id="firstName" value="<?php echo $this->data['my_profile']->last_name ?>" required>
+                    <input type="text" name="last_name" class="form-control" id="firstName" value="<?php echo $this->data['my_profile']->last_name ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="firstName">Mobile No.</label>
@@ -29,17 +29,17 @@
                 </div>
                 <div class="form-group">
                     <label for="firstName">Address <span class="required">*</span></label>
-                    <input type="text" name="first_name" class="form-control" id="firstName" value="<?php echo $this->data['my_profile']->address ?>" required>
+                    <input type="text" name="address" class="form-control" id="firstName" value="<?php echo $this->data['my_profile']->address ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="firstName">Gender <span class="required">*</span></label>
                     <div style="display: flex;">
                         <label class="mr-10" style="display: flex; align-items: center; cursor: pointer;">
-                            <input type="radio" name="gender[]" id="" class="mr-3" <?php echo $this->data['my_profile']->gender == 1 ? 'checked' : '' ?>>
+                            <input type="radio" name="gender" value="1" class="mr-3" <?php echo $this->data['my_profile']->gender == 1 ? 'checked' : '' ?>>
                             Male
                         </label>
                         <label class="mr-10" style="display: flex; align-items: center; cursor: pointer;">
-                            <input type="radio" name="gender[]" id="" class="mr-3" <?php echo $this->data['my_profile']->gender == 0 ? 'checked' : '' ?>>
+                            <input type="radio" name="gender" value="0" class="mr-3" <?php echo $this->data['my_profile']->gender == 0 ? 'checked' : '' ?>>
                             Female
                         </label>
                     </div>

@@ -19,4 +19,19 @@ class Profile extends Controller
         // return;
         $this->view('front/pages/profile', $this->data);
     }
+
+    public function update()
+    {
+        $data = array(
+            'first_name' => trim($_POST['first_name']),
+            'last_name' => trim($_POST['last_name']),
+            'address' => trim($_POST['address']),
+            'gender' => trim($_POST['gender'])
+        );
+        $updateProfile = $this->model_user->updateProfile($data);
+        if ($updateProfile) {
+            $_SESSION['display_name'] = $updateProfile->display_name;
+            $this->redirect('profile');
+        }
+    }
 }

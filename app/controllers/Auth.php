@@ -75,21 +75,49 @@ class Auth extends Controller
                 'confirm_password' => trim($_POST['confirm_password']),
             );
 
-            $registerUser = $this->model_user->register($data);
+            if (empty($data['first_name'])) {
+                $this->data['firstNameError'] = 'Please Enter Email OR Username.';
+            }
 
-            if ($registerUser) {
-                $directory = 'public/storage/users' . '/' . $registerUser->username;
-                if (!file_exists($directory)) {
-                    $old = umask(0);
-                    mkdir($directory, 0777);
-                    umask($old);
-                }
-                if ($this->sendVerificationMail($registerUser))
-                    $this->createAuthSession($registerUser);
-                // $this->sendOTP($registerUser);
-            } else {
-                $this->data['errorMsg'] = 'Something went wrong.';
+            if (empty($data['last_name'])) {
+                $this->data['lastNameError'] = 'Last Name cannot be empty.';
+            }
+
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                $this->data['emailError'] = "Invalid email format !";
+            }
+
+            if (strlen($data['mobile_no']) != 10) {
+                $this->data['mobileNoError'] = 'Mobile No. must be of 10 digits.';
+            }
+
+            if ($data['password'] != $data['confirm_password']) {
+                $this->data['passwordNotMatch'] = "Password & Confirm Password doesn't match.";
+            }
+
+            if (empty($data['first_name']) || empty($data['last_name']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL) || empty($data['email']) || strlen($data['mobile_no']) != 10 || empty($data['password']) || empty($data['confirm_password']) || $data['password'] != $data['confirm_password'])
                 $this->view('front/pages/auth/register', $this->data);
+            else {
+                $registerUser = $this->model_user->register($data);
+
+                if ($registerUser) {
+                    $directory = 'public/storage/users' . '/' . $registerUser->username;
+                    if (!file_exists($directory)) {
+                        $old = umask(0);
+                        mkdir($directory, 0777);
+                        umask($old);
+                    }
+                    if ($this->sendVerificationMail($registerUser))
+                        $this->createAuthSession($registerUser);
+                    else {
+                        $this->createAuthSession($registerUser);
+                        $this->view('front/pages/auth/verify', $this->data);
+                    }
+                    // $this->sendOTP($registerUser);
+                } else {
+                    $this->data['errorMsg'] = 'Something went wrong.';
+                    $this->view('front/pages/auth/register', $this->data);
+                }
             }
         } else {
             $this->view('front/pages/auth/register', $this->data);

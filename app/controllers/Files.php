@@ -68,7 +68,7 @@ class Files extends Controller
             $folderName = $this->model_folder->getFolderName($userInfo['uid'], $file->folder_id);
             if (file_exists($directory . '/' . $folderName . '/' . $file->name)) {
                 $file->owner = $userInfo['display_name'];
-                $file->created_time = date('Y-m-d h:i:s A', $file->created_at);
+                $file->created_time = date('Y-m-d h:i:s A', $file->created_at || 0);
                 $file->modified_time = filesize($directory . '/' . $folderName . '/' . $file->name);
                 $file->modified_time = date('Y-m-d h:i:s A', fileatime($directory . '/' . $folderName . '/' . $file->name));
                 // Get Directory Size Starts from Here
@@ -79,8 +79,10 @@ class Files extends Controller
                     $fileSize = number_format(($size / 1024), 2) . ' MB';
                 else
                     $fileSize = number_format($size, 2) . ' KB';
-                $file->size = $fileSize;
                 // Get Directory Size Ends Here
+                $file->size = $fileSize;
+                $folderName = str_replace(' ', '\ ', $folderName);
+                $file->folderName = $folderName;
             }
         }
         $data = array_reverse($files);

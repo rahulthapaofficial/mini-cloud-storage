@@ -30,9 +30,9 @@
             <a href="<?php echo BASEURL . '/sharedwithme' ?>"><i class="fas fa-users mr-4"></i> Collaboration</a>
             <!-- <a href="<?php echo BASEURL . '/sharedwithme' ?>"><i class="fas fa-users mr-4"></i> Shared with me</a> -->
         </li>
-        <li id="recentMainNav">
+        <!-- <li id="recentMainNav">
             <a href="<?php echo BASEURL . '/sharedwithme' ?>"><i class="fas fa-clock mr-4"></i> Recent</a>
-        </li>
+        </li> -->
         <li id="trashMainNav">
             <a href="<?php echo BASEURL . '/trash' ?>"><i class="fas fa-trash-alt mr-4"></i> Trash</a>
         </li>

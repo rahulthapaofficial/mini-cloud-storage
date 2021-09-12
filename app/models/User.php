@@ -110,4 +110,32 @@ class User
         unset($result->password, $result->otp, $result->hash, $result->created_at, $result->updated_at);
         return $result;
     }
+
+    public function updateProfile($data)
+    {
+        $userId = $_SESSION['uid'];
+        $first_name = $data['first_name'];
+        $last_name = $data['last_name'];
+        $display_name = $first_name . ' ' . $last_name;
+        $address = $data['address'];
+        $gender = $data['gender'];
+
+        $this->db->query("UPDATE users SET first_name = :fname, last_name = :lname, display_name = :displayname, address = :address, gender = :gender, updated_at = :updated WHERE id = :uid");
+        $this->db->bind(':fname', $first_name);
+        $this->db->bind(':lname', $last_name);
+        $this->db->bind(':displayname', $display_name);
+        $this->db->bind(':address', $address);
+        $this->db->bind(':gender', $gender);
+        $this->db->bind(':updated', time());
+        $this->db->bind(':uid', $userId);
+        $result = $this->db->execute();
+        if ($result) {
+            if ($this->db->execute()) {
+                $this->db->query("SELECT * FROM users WHERE id = :uid");
+                $this->db->bind(':uid', $userId);
+                $auth = $this->db->single();
+                return $auth;
+            }
+        }
+    }
 }

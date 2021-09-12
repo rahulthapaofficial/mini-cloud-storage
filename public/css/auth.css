@@ -178,3 +178,7 @@ label.checkbox-label {
 .ml-10 {
   margin-left: 10px;
 }
+
+.errorMsg {
+  padding: 10px;
+}

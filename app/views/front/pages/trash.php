@@ -15,11 +15,6 @@ require  APPROOT . '/views/front/layouts/partial/sidebar.php';
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i = 1; $i < 5; $i++) : ?>
-                    <tr>
-                        <td>HTML Tutorial <?php echo $i ?></td>
-                    </tr>
-                <?php endfor ?>
             </tbody>
         </table>
     </div>

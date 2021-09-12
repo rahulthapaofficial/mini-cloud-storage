@@ -3,6 +3,7 @@
 require  APPROOT . '/views/front/layouts/partial/header.php';
 require  APPROOT . '/views/front/layouts/partial/navbar.php';
 require  APPROOT . '/views/front/layouts/partial/sidebar.php';
+$username = $this->data['user_info']['username'];
 ?>
 <div class="content">
     <div class="content-header">
@@ -16,20 +17,15 @@ require  APPROOT . '/views/front/layouts/partial/sidebar.php';
                     <th>Created At</th>
                     <th>Last Modified</th>
                     <th>File Size</th>
-                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($data['files'] as $key => $folder) : ?>
+                <?php foreach ($data['files'] as $key => $file) : ?>
                     <tr>
-                        <td><?php echo $folder->name ?></td>
-                        <td><?php echo $folder->created_time ?></td>
-                        <td><?php echo $folder->modified_time ?></td>
-                        <td><?php echo $folder->size ?></td>
-                        <td>
-                            <a href="#" class="btn btn-system btn-xs"><i class="fas fa-download"></i> Download</a>
-                            <a href="#" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i> Delete</a>
-                        </td>
+                        <td><?php echo $file->name ?></td>
+                        <td><?php echo $file->created_time ?></td>
+                        <td><?php echo $file->modified_time ?></td>
+                        <td><?php echo $file->size ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
